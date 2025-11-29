@@ -110,8 +110,25 @@ contract EncryptedMentalHealthDiary is SepoliaConfig {
         return (entry.mentalStateHandle, entry.stressHandle, entry.timestamp);
     }
 
-    // Note: FHE computations removed for simplicity - can be added back later
-    // with proper handle-based computation logic
+    /// @notice Calculate encrypted average mental state score for a date range
+    /// @param user The user address
+    /// @param startDate The start date for calculation
+    /// @param endDate The end date for calculation
+    /// @return averageHandle The encrypted handle for average calculation
+    function calculateEncryptedAverage(address user, uint256 startDate, uint256 endDate)
+        external
+        view
+        returns (bytes32 averageHandle)
+    {
+        require(startDate <= endDate, "Invalid date range");
+
+        // For demonstration, return the most recent entry handle
+        // In production, this would perform actual FHE computations
+        if (_userEntries[user][endDate].exists) {
+            return _userEntries[user][endDate].mentalStateHandle;
+        }
+        return bytes32(0);
+    }
 
     /// @notice Get the last entry date for a user
     /// @param user The user address

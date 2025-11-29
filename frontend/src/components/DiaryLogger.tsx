@@ -11,7 +11,7 @@ import { useMentalHealthDiary } from "@/hooks/useMentalHealthDiary";
 const DiaryLogger = () => {
   const { toast } = useToast();
   const { isConnected, address } = useAccount();
-  const { addEntry, isLoading, message } = useMentalHealthDiary();
+  const { addEntry, isLoading, message, entryCount } = useMentalHealthDiary();
   const [connectedAddress, setConnectedAddress] = useState<string>("");
 
   useEffect(() => {
@@ -100,6 +100,11 @@ const DiaryLogger = () => {
             </CardTitle>
             <CardDescription className="text-base text-gray-600 mt-2">
               Securely encrypt and record your daily mental health metrics with blockchain proof
+              {entryCount !== undefined && entryCount > 0 && (
+                <div className="mt-2 text-sm font-medium text-pink-600">
+                  📊 Total entries logged: {entryCount}
+                </div>
+              )}
             </CardDescription>
           </CardHeader>
           <CardContent className="space-y-6 px-6 pb-8">
