@@ -131,3 +131,8 @@ The frontend will be available at `http://localhost:8080`
 
 MIT
 
+
+
+---
+
+**Built with ❤️ using [Zama FHEVM](https://www.zama.ai/)**
