@@ -100,7 +100,7 @@ const DiaryLogger = () => {
           <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-primary"></div>
           <CardHeader className="pb-6 pt-8">
             <CardTitle className="text-3xl font-bold text-gray-800 flex items-center gap-3">
-              <div className="p-2 bg-gradient-primary rounded-xl shadow-md">
+              <div className="p-2 bg-gradient-primary rounded-xl shadow-md animate-pulse">
                 <Lock className="w-6 h-6 text-white" />
               </div>
               Log Mental Health Entry
@@ -119,12 +119,13 @@ const DiaryLogger = () => {
               <label className="text-sm font-semibold text-gray-700 flex items-center gap-2">
                 <Calendar className="w-4 h-4 text-gray-500" />
                 Date
+                <span className="text-xs text-gray-400 font-normal">(Today recommended)</span>
               </label>
               <Input
                 type="date"
                 value={selectedDate}
                 onChange={(e) => setSelectedDate(e.target.value)}
-                className="bg-white border-gray-200 focus:border-primary focus:ring-primary/20 rounded-xl"
+                className="bg-white border-gray-200 focus:border-primary focus:ring-primary/20 rounded-xl hover:shadow-md transition-shadow"
                 max={new Date().toISOString().split("T")[0]}
               />
             </div>
@@ -175,31 +176,6 @@ const DiaryLogger = () => {
             <Button
               onClick={handleLogEntry}
               disabled={isLoading || !isConnected}
-              className="w-full gap-2 bg-gradient-primary hover:opacity-90 text-white shadow-lg shadow-primary/30 hover:shadow-xl hover:shadow-primary/40 transition-all duration-300 rounded-xl font-semibold text-lg py-6"
-              size="lg"
-            >
-              {isLoading ? (
-                <>
-                  <div className="w-4 h-4 border-2 border-current border-t-transparent rounded-full animate-spin" />
-                  Encrypting & Logging...
-                </>
-              ) : (
-                <>
-                  <Lock className="w-4 h-4" />
-                  {isConnected ? "Log Entry" : "Connect Wallet First"}
-                </>
-              )}
-            </Button>
-          </CardContent>
-        </Card>
-      </div>
-    </section>
-  );
-};
-
-export default DiaryLogger;
-
-
               className="w-full gap-2 bg-gradient-primary hover:opacity-90 text-white shadow-lg shadow-primary/30 hover:shadow-xl hover:shadow-primary/40 transition-all duration-300 rounded-xl font-semibold text-lg py-6"
               size="lg"
             >

@@ -90,7 +90,7 @@ const DiaryViewer = () => {
           <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-primary"></div>
           <CardHeader className="pb-6 pt-8">
             <CardTitle className="text-3xl font-bold text-gray-800 flex items-center gap-3">
-              <div className="p-2 bg-gradient-primary rounded-xl shadow-md">
+              <div className="p-2 bg-gradient-primary rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300">
                 <Eye className="w-6 h-6 text-white" />
               </div>
               View & Decrypt Entries

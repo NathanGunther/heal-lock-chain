@@ -23,8 +23,8 @@ const Index = () => {
       <main className="pt-24 pb-16 relative z-10">
         <div className="container mx-auto px-4 space-y-12">
           <section className="text-center space-y-6 max-w-3xl mx-auto">
-            <div className="inline-block p-4 bg-gradient-primary rounded-2xl mb-4 shadow-lg">
-              <h1 className="text-5xl md:text-6xl font-bold text-white drop-shadow-lg">
+            <div className="inline-block p-4 bg-gradient-primary rounded-2xl mb-4 shadow-lg hover:shadow-xl transition-shadow duration-300">
+              <h1 className="text-5xl md:text-6xl font-bold text-white drop-shadow-lg hover:scale-105 transition-transform duration-300">
                 HealLock
               </h1>
             </div>
